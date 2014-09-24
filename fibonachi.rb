@@ -34,7 +34,7 @@ fib_container print each value
 =end
 
 
-def print_fibinacci(num)
+def iterative_fibinacci(num)
 	fib_container = [1,1]
 	(num-2).times { fib_container << fib_container[-2] + fib_container.last }
 	fib_container.last
@@ -47,6 +47,6 @@ def recursive_fibonacci(num, fib_container = [1,1])
 	fib_container.last
 end
 
-ap recursive_fibonacci(300) #->222232244629420445529739893461909967206666939096499764990979600
+ap recursive_fibonacci(300) == 222232244629420445529739893461909967206666939096499764990979600
 
-ap print_fibinacci(300) #->222232244629420445529739893461909967206666939096499764990979600
+ap iterative_fibinacci(300) == 222232244629420445529739893461909967206666939096499764990979600
