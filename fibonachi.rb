@@ -1,5 +1,5 @@
 ##########################
-# RUBY FIBONACHI NUMBERS #
+# RUBY FIBONACCI NUMBERS #
 ##########################
 ### Hunter T. Chapman  ###
 ## bootcoder@gmail.com  ##
@@ -13,7 +13,7 @@ require 'awesome_print'
 
 =begin
 
-Example Fibonachi Render
+Example Fibonacci Render
 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144
 
 
@@ -34,19 +34,19 @@ fib_container print each value
 =end
 
 
-def print_fibinachi(num)
+def print_fibinacci(num)
 	fib_container = [1,1]
 	(num-2).times { fib_container << fib_container[-2] + fib_container.last }
-	fib_container
+	fib_container.last
 end
 
-def recursive_fibonachi(num, fib_container = [1,1])
+def recursive_fibonacci(num, fib_container = [1,1])
 	fib_container << fib_container[-2] + fib_container.last
 	num -= 1
-	recursive_fibonachi(num, fib_container) unless num == 2
-	fib_container
+	recursive_fibonacci(num, fib_container) unless num == 2
+	fib_container.last
 end
 
-ap recursive_fibonachi(12)
+ap recursive_fibonacci(300) #->222232244629420445529739893461909967206666939096499764990979600
 
-# ap print_fibinachi(300)
+ap print_fibinacci(300) #->222232244629420445529739893461909967206666939096499764990979600
