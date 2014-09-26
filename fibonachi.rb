@@ -47,6 +47,56 @@ def recursive_fibonacci(num, fib_container = [1,1])
 	fib_container.last
 end
 
+# write a function which takes a number and generates 
+# Fibonacci's until it surpasses it then returns true if the number is in sequence.
+
+def is_fibonacci(num)
+	fib_container = [1,1]
+	until fib_container.last >= num
+		fib_container << fib_container[-2] + fib_container.last 
+	end
+	result = [num, (num == fib_container.last)]
+end
+# puts "The number: #{num}, is a Fibonacci Sequenced Number." if fib_container.last == num
+# 	puts "The number: #{num}, is not a Fibonacci Sequenced Number." if fib_container.last != num
+
+
+##########################
+# 			Controller 
+##########################
+
+def runFIBapp
+	greeting
+	list_commands
+
+end
+
+def greeting
+	puts "--Fibonacci Command Console--"
+end
+
+def list_commands
+	user_input
+end
+
+def user_input
+	print "->"
+	input = gets.chomp
+	ap input
+end
+
+
+runFIBapp
+
+
+
+##########################
+# 			TEST CODE
+##########################
+
 ap recursive_fibonacci(300) == 222232244629420445529739893461909967206666939096499764990979600
 
 ap iterative_fibinacci(300) == 222232244629420445529739893461909967206666939096499764990979600
+
+ap is_fibonacci(143)[1] == false
+ap is_fibonacci(144)[1] == true
